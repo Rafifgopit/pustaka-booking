@@ -10,13 +10,12 @@
                         <div class="col-lg">
                             <div class="p-5">
                                 <div class="text-center">
-                                    <h1 class="h4 text-gray-900 mb-4"></h1>
+                                    <h1 class="h4 text-gray-900 mb-4">Halaman Login!!</h1>
                                 </div>
 
                                 <?= $this->session->flashdata('pesan');?>
 
                                 <form class="user" method="post" action="<?= base_url('autentifikasi');?>">
-                                    <h1 class="h4 text-gray-900 mb-4 text-center">Halaman Login!!</h1>
                                     <div class="form-group">
                                         <input type="text" class="form-control form-control-user" value="<?= set_value('email');?>" id="email" placeholder="Masukkan Alamat Email" name="email">
                                         <?= form_error('email','<small class="text-danger pl-3">','</small>');?>
@@ -25,20 +24,7 @@
                                         <input type="password" class="form-control form-control-user" id="password" placeholder="Password" name="password">
                                         <?= form_error('password','<small class="text-danger pl-3">','</small>');?>
                                     </div>
-                                    <!-- <div class="form-group">
-                                        <div class="custom-control custom-checkbox small">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck">
-                                            <label for="customCheck" class="custom-control-label">Remember Me</label>
-                                        </div>
-                                    </div> -->
                                     <button type="submit" class="btn btn-primary btn-user btn-block">Masuk</button>
-                                    <!-- <hr>
-                                    <a href="#" class="btn btn-google btn-user btn-block">
-                                        <i class="fab fa-google fa-fw"></i> Login with Google
-                                    </a>
-                                    <a href="#" class="btn btn-facebook btn-user btn-block">
-                                        <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
-                                    </a> -->
                                 </form>
                                 <hr>
                                 <div class="text-center">
