@@ -2,11 +2,12 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class ModelBuku extends CI_Model{
+    
     //manajemen pinjam
     public function getBuku(){
         return $this->db->get('buku');
     }
-    public function bukuwhere($where){
+    public function bukuWhere($where){
         return $this->db->get_where('buku', $where);
     }
     public function simpanBuku($data = null){
@@ -24,7 +25,7 @@ class ModelBuku extends CI_Model{
             $this->db->where($where);
         }
         $this->db->from('buku');
-        return $this->db->get()->row('$field');
+        return $this->db->get()->row($field);
     }
 
     //manajemen kategori
