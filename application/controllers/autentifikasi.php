@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class autentifikasi extends CI_Controller{
+class Autentifikasi extends CI_Controller{
     public function index(){
         //jika status login, mka tdk bisa akses halaman login atau dikembalikan ke tampilan user
         if($this->session->userdata('email')){
@@ -66,5 +66,11 @@ class autentifikasi extends CI_Controller{
             $this->session->set_flashdata('pesan', '<div class="alert alert-info alert-message" role="alert">Email tidak terdaftar!!</div>');
             redirect('autentifikasi');
         }
+    }
+    public function blok(){
+        $this->load->view('autentifikasi/blok');
+    }
+    public function gagal(){
+        $this->load->view('autentifikasi/gagal');
     }
 }
