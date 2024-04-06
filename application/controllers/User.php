@@ -3,11 +3,11 @@ defined('BASEPATH') or exit('No direct script acces allowed');
 
 class User extends CI_Controller
 {
-    // public function __contruct()
-    // {
-    //     parent::__contruct();
-    //     cek_login();
-    // }
+    public function __construct()
+    {
+        parent::__construct();
+        cek_login();
+    }
     public function index()
     {
         $data['judul'] = 'Profil Saya';
@@ -62,7 +62,7 @@ class User extends CI_Controller
 
                 if($this->upload->do_upload('image')){
                     $gambar_lama =$data['user']['image'];
-                    if ($gambar_lama != 'default.jpg'){
+                    if ($gambar_lama != 'account.png'){
                         unlink(FCPATH . 'assets/img/profile/' . $gambar_lama);
                     }
                     $gambar_baru = $this->upload->data('file_name');

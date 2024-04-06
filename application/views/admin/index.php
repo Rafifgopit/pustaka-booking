@@ -114,10 +114,10 @@
                             <td><?= $i++;?></td>
                             <td><?= $a['nama']?></td>
                             <td><?= $a['email']?></td>
-                            <td><?= $a['id_role']?></td>
+                            <td><?= $a['role_id']?></td>
                             <td><?= $a['is_active']?></td>
-                            <!-- <td><?= date('Y', $a['tanggal_input'])?></td> -->
-                            <td><?= $a['tanggal_input']?></td>
+                            <td><?= date('Y', $a['tanggal_input'])?></td>
+                            <!-- <td><?= $a['tanggal_input']?></td> -->
                         </tr>
                         <?php }?>
                     </tbody>
