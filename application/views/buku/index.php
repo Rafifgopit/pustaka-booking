@@ -47,7 +47,7 @@
                         </td>
                         <td>
                             <a href="<?= base_url('buku/ubahBuku/').$b['id'];?>" class="badge badge-info"><i class="fas fa-edit"></i>Ubah</a>
-                            <a href="<?= base_url('buku/hapusBuku').$b['id'];?>" onclick="return confirm('kamu yakin akan menghapus <?= $judul.' '.$b['judul_buku'];?>?');" class="badge badge-danger"><i class="fas fa-trash"></i>Hapus</a>
+                            <a href="<?= base_url('buku/hapusBuku/').$b['id'];?>" onclick="return confirm('kamu yakin akan menghapus <?= $judul.' '.$b['judul_buku'];?>?');" class="badge badge-danger"><i class="fas fa-trash"></i>Hapus</a>
                         </td>
                     </tr>
                     <?php }?>
@@ -61,7 +61,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="bukuBaruModalLAbel">Tambah Buku</h5>
+                <h5 class="modal-title" id="bukuBaruModalLabel">Tambah Buku</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

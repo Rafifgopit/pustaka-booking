@@ -36,7 +36,9 @@ class User extends CI_Controller
     {
         $data['judul']='Ubah Profil';
         $data['user']=$this->ModelUser->cekData(['email'=>$this->session->userdata('email')])->row_array();
-        $this->form_validation->set_rules('nama','Nama Lengkap','required|trim',['required'=>'Nama Tidak Boleh Kosong']);
+        $this->form_validation->set_rules('nama','Nama Lengkap','required|trim',[
+            'required'=>'Nama Tidak Boleh Kosong'
+        ]);
 
         if ($this->form_validation->run()== false){
             $this->load->view('admin/header', $data);
@@ -71,7 +73,7 @@ class User extends CI_Controller
             }
             $this->db->set('nama',$nama);
             $this->db->where('email',$email);
-            $this->db->where('user');
+            $this->db->update('user');
 
             $this->session->set_flashdata('pesan','<div class="alert alert-succes alert-massage" role="alert">Profil Berhasil diubah</div>');
             redirect('user');
