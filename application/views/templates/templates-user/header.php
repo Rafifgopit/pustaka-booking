@@ -32,8 +32,8 @@
                     <?php } 
                     else { ?>
 
-                        <a class="nav-item nav-link" data-toggle="modal" datatarget="#daftarModal" href="#"><i class="fas fw fa-login"></i> Daftar</a>
-                        <a class="nav-item nav-link" data-toggle="modal" datatarget="#loginModal" href="#"><i class="fas fw fa-login"></i> Log in</a>
+                        <a class="nav-item nav-link" data-toggle="modal" data-target="#daftarModal" href="#"><i class="fas fw fa-login"></i> Daftar</a>
+                        <a class="nav-item nav-link" data-toggle="modal" data-target="#loginModal" href="<?= base_url('member'); ?>"><i class="fas fw fa-login"></i> Log in</a>
                     
                     <?php } ?>
                     <span class="nav-item nav-link navright" style="display:block; marginleft:20px;">Selamat Datang <b><?= $user; ?></b></span>

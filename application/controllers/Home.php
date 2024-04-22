@@ -25,11 +25,13 @@ class Home extends CI_Controller
 
             $this->load->view('templates/templates-user/header', $data);
             $this->load->view('buku/daftarbuku', $data);
+            $this->load->view('templates/templates-user/modal');
             $this->load->view('templates/templates-user/footer', $data);
         } else {
             $data['user'] = 'Pengunjung';
             $this->load->view('templates/templates-user/header', $data);
             $this->load->view('buku/daftarbuku', $data);
+            $this->load->view('templates/templates-user/modal');
             $this->load->view('templates/templates-user/footer', $data);
         }
     }
@@ -41,21 +43,22 @@ class Home extends CI_Controller
         $data['user'] = "Pengunjung";
         $data['title'] = "Detail Buku";
 
-        foreach ($buku as $fields) {
-            $data['judul'] = $fields->judul_buku;
-            $data['pengarang'] = $fields->pengarang;
-            $data['penerbit'] = $fields->penerbit;
-            $data['kategori'] = $fields->kategori;
-            $data['tahun'] = $fields->tahun_terbit;
-            $data['isbn'] = $fields->isbn;
-            $data['gambar'] = $fields->image;
-            $data['dipinjam'] = $fields->dipinjam;
-            $data['dibooking'] = $fields->dibooking;
-            $data['stok'] = $fields->stok;
+        foreach ($buku as $f) {
+            $data['judul'] = $f->judul_buku;
+            $data['pengarang'] = $f->pengarang;
+            $data['penerbit'] = $f->penerbit;
+            $data['kategori'] = $f->kategori;
+            $data['tahun'] = $f->tahun_terbit;
+            $data['isbn'] = $f->isbn;
+            $data['gambar'] = $f->image;
+            $data['dipinjam'] = $f->dipinjam;
+            $data['dibooking'] = $f->dibooking;
+            $data['stok'] = $f->stok;
             $data['id'] = $id;
         }
         $this->load->view('templates/templates-user/header', $data);
         $this->load->view('buku/detail-buku', $data);
+        $this->load->view('templates/templates-user/modal');
         $this->load->view('templates/templates-user/footer');
     }
 
