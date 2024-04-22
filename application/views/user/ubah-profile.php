@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-lg-9">
             <?= form_open_multipart('user/ubahprofil');?>
-            <div class="form-group-row">
+            <div class="form-group row">
                 <label for="email" class="col-sm-2 col-form-label">Email</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="email" name="email" value="<?=$user['email'];?>"readonly>
@@ -37,6 +37,8 @@
                     <button class="btn btn-dark" onclick="window.history.go(-1)">Kembali</button>
                 </div>
             </div>
+            </form>
         </div>
     </div>
+</div>
 </div>

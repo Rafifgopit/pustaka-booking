@@ -47,7 +47,7 @@ class Autentifikasi extends CI_Controller{
                     $this->session->set_userdata($data);
 
                     if($user['role_id'] == 1){
-                        redirect('Admin');
+                        redirect('admin');
                     }else{
                         if($user['image'] == ''){
                             $this->session->set_flashdata('pesan', '<div class="alert alert-info alert-message" role="alert">Silahkan Ubah Profile Anda untuk Ubah Photo Profil</div>');
@@ -125,5 +125,12 @@ class Autentifikasi extends CI_Controller{
             $this->session->set_flashdata('pesan','<div class="alert alert-success alert-message" role="alert">Selamat!! akun member anda sudah dibuat. Silahkan Aktivasi Akun anda</div>');
             redirect('autentifikasi');
         }
+    }
+    public function logout(){
+        $this->session->unset_userdata('email');
+        $this->session->unset_userdata('role_id');
+
+        $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Anda telah logout!!</div>');
+        redirect('autentifikasi');
     }
 }
