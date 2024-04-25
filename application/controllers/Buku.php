@@ -58,7 +58,6 @@ class Buku extends CI_Controller{
             $this->load->view('admin/sidebar', $data);
             $this->load->view('admin/topbar', $data);
             $this->load->view('buku/index', $data);
-            // $this->load->view('buku/ubah_buku', $data);
             $this->load->view('admin/footer');
         }else{
             if ($this->upload->do_upload('image')) {

@@ -47,7 +47,7 @@ class ModelBuku extends CI_Model{
     
     //join
     public function joinKategoriBuku($where){
-        $this->db->select('buku.id_kategori,kategori.kategori');
+        $this->db->select('buku.id, buku.judul_buku, buku.pengarang, buku.penerbit, buku.tahun_terbit, buku.isbn, buku.image, buku.dipinjam, buku.dibooking, buku.stok,kategori.kategori');
         $this->db->from('buku');
         $this->db->join('kategori','kategori.id = buku.id_kategori');
         $this->db->where($where);
