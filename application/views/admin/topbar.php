@@ -9,7 +9,7 @@
                 <div class="topbar-divider d-none d-sm-block"></div>
                 <li class="nav-item dropdown no-arrow">
                     <a href="#" class="nav-link dropdown-toggle" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $user['name'];?></span>
+                        <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $user['nama'];?></span>
                         <img src="<?= base_url('assets/img/profile/');?>account.png " class="img-profile rounded-circle"> <!-- . $user['image']; -->
                     </a>
                     <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in">
