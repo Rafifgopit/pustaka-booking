@@ -41,12 +41,12 @@ class Autentifikasi extends CI_Controller{
                 if(password_verify($password, $user['password'])){
                     $data = [
                         'email' => $user['email'],
-                        'id_role' => $user['id_role']
+                        'role_id' => $user['role_id']
                     ];
 
                     $this->session->set_userdata($data);
 
-                    if($user['id_role'] == 1){
+                    if($user['role_id'] == 1){
                         redirect('admin');
                     }else{
                         if($user['image'] == ''){
@@ -74,9 +74,9 @@ class Autentifikasi extends CI_Controller{
         $this->load->view('autentifikasi/gagal');
     }
     public function registrasi(){
-        if ($this->session->userdata('email')){
-            redirect('user');
-        }
+        // if ($this->session->userdata('email')){
+        //     redirect('user');
+        // }
         // membuat rule untuk inputan nama agar tidak boleh kosong dengan membuat pesan error dengan bahasa sendiri yaitu 'Nama Belum diisi'
         $this->form_validation->set_rules('nama', 'Nama Lengkap', 'required',[
             'required' => 'Nama Belum diisi!'
@@ -106,10 +106,10 @@ class Autentifikasi extends CI_Controller{
             $data = [
                 'nama' => htmlspecialchars($this->input->post('nama', true)),
                 'email' => htmlspecialchars($email),
-                'image' => 'account.png',
+                'image' => 'default.jpg',
                 'password' => password_hash($this->input->post('password1'),PASSWORD_DEFAULT),
-                'id_role' => 2,
-                'is_active' => 0,
+                'role_id' => 2,
+                'is_active' => 1,
                 'tanggal_input' => time()
             ];
             $this->ModelUser->simpanData($data);//menggunakan model
@@ -117,5 +117,12 @@ class Autentifikasi extends CI_Controller{
             $this->session->set_flashdata('pesan','<div class="alert alert-success alert-message" role="alert">Selamat!! akun member anda sudah dibuat. Silahkan Aktivasi Akun anda</div>');
             redirect('autentifikasi');
         }
+    }
+    public function logout(){
+        $this->session->unset_userdata('email');
+        $this->session->unset_userdata('role_id');
+
+        $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Anda telah logout!!</div>');
+        redirect('autentifikasi');
     }
 }
