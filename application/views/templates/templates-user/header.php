@@ -16,7 +16,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <a class="navbar-brand" href="<?= base_url(); ?>">Pustaka</a>
-            <button class="navbar-toggler" type="button" datatoggle="collapse" data-target="#navbarNavAltMarkup" ariacontrols="navbarNavAltMarkup" aria-expanded="false" arialabel="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" arialabel="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
  
@@ -25,7 +25,7 @@
                     <a class="nav-item navlink active" href="<?= base_url(); ?>">Beranda <span class="sronly">(current)</span></a>
                     <?php
                     if (!empty($this->session->userdata('email'))) { ?>
-                        <a class="nav-item nav-link" href="#">Booking Buku</a>
+                        <a class="nav-item nav-link" href="<?= base_url('booking'); ?>">Booking Buku</a>
                         <a class="nav-item nav-link" href="<?= base_url('member/myprofil'); ?>"> Profil Saya</a>
                         <a class="nav-item nav-link" href="<?= base_url('member/logout'); ?>"><i class="fas fw fa-login"></i> Log out</a>
 

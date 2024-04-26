@@ -4,7 +4,7 @@
             <tr>
                 <td>
                     <div class="table-responsive full-width">
-                        <table class="table table-bordered table-striped tablehover" id="table-datatable">
+                        <table class="table table-bordered table-striped table-hover" id="table-datatable">
                             <tr>
                                 <th>No.</th>
                                 <th>Buku</th>
@@ -26,7 +26,7 @@
                                     <td nowrap><?= $t['penerbit']; ?></td>
                                     <td nowrap><?= substr($t['tahun_terbit'], 0,4); ?></td>
                                     <td nowrap>
-                                        <a href="<?= base_url('booking/hapusbooking/' . $t['id_buku']); ?>" onclick="return_konfirm('Yakin tidak Jadi Booking '.$t['judul_buku'])"><i class="btn btn-sm btn-outline-danger fas fw fa-trash"></i></a>
+                                        <a href="<?= base_url('booking/hapusbooking/' . $t['id_buku']); ?>" onclick="return_confirm('Yakin tidak Jadi Booking '.$t['judul_buku'])"><i class="btn btn-sm btn-outline-danger fas fw fa-trash"></i></a>
                                     </td>
                                 </tr>
                             <?php $no++;
