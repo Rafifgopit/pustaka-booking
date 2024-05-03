@@ -19,10 +19,9 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" arialabel="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
- 
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-item navlink active" href="<?= base_url(); ?>">Beranda <span class="sronly">(current)</span></a>
+                    <a class="nav-item nav-link active" href="<?= base_url(); ?>">Beranda <span class="sronly">(current)</span></a>
                     <?php
                     if (!empty($this->session->userdata('email'))) { ?>
                         <a class="nav-item nav-link" href="<?= base_url('booking'); ?>">Booking Buku</a>
