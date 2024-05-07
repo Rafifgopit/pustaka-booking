@@ -34,18 +34,33 @@
                                         <?= $no; ?>
                                     </td>
                                     <td>
+<<<<<<< HEAD
                                         <img src="<?= base_url('assets/img/upload/' . $i['image']); ?>" class="rounded"
                                             alt="No Picture" width="10%">
+=======
+                                        <img src="<?= base_url('assets/img/upload/' . $i['image']); ?>" class="rounded" alt="No Picture" width="10%">
+>>>>>>> upstream/main
                                     </td>
                                     <td nowrap>
                                         <?= $i['pengarang']; ?>
                                     </td>
                                     <td nowrap>
+<<<<<<< HEAD
                                         <?= $i['tahun_terbit']; ?>
                                     </td>
                                 </tr>
                                 <?php $no++;
                             } ?>
+=======
+                                    <?= $i['penerbit']; ?>
+                                    </td>
+                                    <td nowrap>
+                                    <?= $i['tahun_terbit']; ?>
+                                    </td>
+                                </tr>
+                                <?php $no++;
+                                } ?>
+>>>>>>> upstream/main
                         </table>
                     </div>
                 </td>
