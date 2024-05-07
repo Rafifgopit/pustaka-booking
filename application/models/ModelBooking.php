@@ -1,4 +1,5 @@
-<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
+<?php if (!defined('BASEPATH'))
+    exit('No direct script access allowed');
 
 class ModelBooking extends CI_Model
 {
@@ -27,16 +28,16 @@ class ModelBooking extends CI_Model
         $this->db->join('booking_detail d', 'd.id_booking=bo.id_booking');
         $this->db->join('buku bu ', 'bu.id=d.id_buku');
         $this->db->where($where);
-    
+
         return $this->db->get();
     }
-    
+
     public function simpanDetail($where = null)
     {
         $sql = "INSERT INTO booking_detail (id_booking,id_buku) SELECT booking.id_booking,temp.id_buku FROM booking, temp WHERE temp.id_user=booking.id_user AND booking.id_user='$where'";
         $this->db->query($sql);
     }
- 
+
     public function insertData($table, $data)
     {
         $this->db->insert($table, $data);
@@ -46,7 +47,7 @@ class ModelBooking extends CI_Model
     {
         $this->db->update($table, $data, $where);
     }
-        
+
     public function deleteData($where, $table)
     {
         $this->db->where($where);
@@ -69,14 +70,14 @@ class ModelBooking extends CI_Model
     {
         $this->db->query('CREATE TABLE IF NOT EXISTS temp(id_booking varchar(12), tgl_booking DATETIME, email_user varchar(128), id_buku int)');
     }
-    
+
     public function selectJoin()
     {
         $this->db->select('*');
         $this->db->from('booking');
         $this->db->join('booking_detail', 'booking_detail.id_booking=booking.id_booking');
         $this->db->join('buku', 'booking_detail.id_buku=buku.id');
-        
+
         return $this->db->get();
     }
 
@@ -100,9 +101,9 @@ class ModelBooking extends CI_Model
 
         $kodemax = str_pad($kode, 3, "0", STR_PAD_LEFT);
         $kodejadi = date('dmY') . $kodemax;
-        
+
         return $kodejadi;
-        }
     }
+}
 
 

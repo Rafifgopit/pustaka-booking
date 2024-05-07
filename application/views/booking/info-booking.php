@@ -34,35 +34,35 @@
                                         <?= $no; ?>
                                     </td>
                                     <td>
-                                        <img src="<?= base_url('assets/img/upload
-/' . $i['image']); ?>" class="rounded" alt="No Picture" width="10%">
+                                        <img src="<?= base_url('assets/img/upload/' . $i['image']); ?>" class="rounded"
+                                            alt="No Picture" width="10%">
                                     </td>
                                     <td nowrap>
                                         <?= $i['pengarang']; ?>
                                     </td>
-                                    td nowrap>
-                                    <?= $i['tahun_terbit']; ?>
-                    </td>
-                </tr>
-                <?php $no++;
+                                    <td nowrap>
+                                        <?= $i['tahun_terbit']; ?>
+                                    </td>
+                                </tr>
+                                <?php $no++;
                             } ?>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <hr>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a class="btn btn-sm btn-outline-danger"
+                        onclick="information('Waktu Pengambilan Buku 1x24 jam dari Booking!!!')"
+                        href="<?php echo base_url() . 'booking/exportToPdf/' . $this->session->userdata('id_user'); ?>"><span
+                            class="far fa-lg fa-fw fa-file-pdf"></span> Pdf</a>
+                </td>
+            </tr>
         </table>
-</div>
-</td>
-</tr>
-<tr>
-    <td>
-        <hr>
-    </td>
-</tr>
-<tr>
-    <td>
-        <a class="btn btn-sm btn-outline-danger"
-            onclick="information('Waktu Pengambilan Buku 1x24 jam dari Booking!!!')"
-            href="<?php echo base_url() . 'booking/exportToPdf/' . $this->session->userdata('id_user'); ?>"><span
-                class="far fa-lg fa-fw fa-file-pdf"></span> Pdf</a>
-    </td>
-</tr>
-</table>
-</center>
+    </center>
 </div>

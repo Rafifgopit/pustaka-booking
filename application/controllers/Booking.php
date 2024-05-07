@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') or exit('No Direct Script Access Allowed');
+defined ('BASEPATH') or exit('No Direct Script Access Allowed');
 date_default_timezone_set('Asia/Jakarta');
 
 class Booking extends CI_Controller
@@ -164,4 +164,5 @@ class Booking extends CI_Controller
         $dompdf->load_html($html);
         $dompdf->render();
         $dompdf->stream("bukti-booking-$id_user.pdf", array('Attachment' => 0));
-}
+    }
+} 
